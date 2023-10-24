@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+void solve(){
+    string number;
+    int t;
+    vector<pair<string, int>> words;
+    cin >> number >> t;
+    int len = number.size();
+    if(len == 2){
+        cout << "No solution." << endl;
+        return;
+    }
+    else{
+        int itr = t;
+        bool cont = 1;
+        while(t--){
+            string inp;
+            cin >> inp;
+             int size = inp.size();
+            words.push_back(make_pair(inp, size));
+    }
+        sort(words.begin(), words.end());
+        for(int i = 0; i < itr; i++){
+            for(int j = i + 1; j < itr; j++){
+                if(words[i].second + words[j].second == len){
+                    cout << words[i].first << ' ' << words[j].first << endl;
+                    cont = 0;
+            }
+        }
+            if(cont == 0) break;
+            else if(i == itr-1){
+                cout << "No solution." << endl;
+                break;
+        }
+    }
+}
+}
+int main(){
+    for(;;){
+        solve();
+    }
+}
